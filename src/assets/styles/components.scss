@@ -1,0 +1,149 @@
+.table {
+  width: 80vw;
+  margin: 2vw auto;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  padding: 5px;
+
+  caption {
+    font: 500 22px Poppins;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.table-header {
+
+
+  td {
+    background: var(--grey);
+    font: 500 20px Poppins;
+    padding: 5px 10px;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  tr {
+    :first-child {
+      border-top-left-radius: 5px;
+    }
+
+    :last-child {
+      border-top-right-radius: 5px;
+    }
+  }
+}
+
+.table-body {
+  border: 1px solid var(--grey);
+}
+
+.table-cell {
+  padding: 8px 5px;
+
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form{
+  padding: 2vw;
+  border-radius: 1vw;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  &-input{
+    display: block;
+    label{
+      display: block;
+    }
+    input{
+      border-radius: 4px;
+      height: 30px;
+      border: 1px solid grey;
+    }
+  }
+}
+
+@mixin button($bkgr: initial, $color: black) {
+  padding: 5px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  padding: 5px 0.5vw;
+  background: $bkgr;
+  color: $color;
+  cursor: pointer;
+}
+
+.input {
+
+  @include button;
+
+  &-label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    span {
+      font-size: 20;
+      font-weight: 500;
+    }
+  }
+}
+
+.button {
+  @include button(navy, white);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 1vw;
+  &-edit{
+    background-color: orange;
+      color: black;
+  }
+  &-delete{
+    background-color: red;
+      color: white;
+  }
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
